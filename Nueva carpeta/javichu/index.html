@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Sara ❤️</title>
+    <style>
+        /* Fondo con corazones animados */
+        body {
+            background-color: #ffcccc;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Título con parpadeo */
+        h1 {
+            font-size: 3em;
+            color: red;
+            text-shadow: 3px 3px 10px pink;
+            animation: parpadeo 1s infinite alternate;
+        }
+
+        @keyframes parpadeo {
+            0% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        /* Texto con efecto de escritura */
+        #mensaje {
+            font-size: 1.5em;
+            color: #b30000;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px pink;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 0;
+            animation: escribir 4s steps(40, end) forwards;
+        }
+
+        @keyframes escribir {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        /* Galería de fotos con efectos */
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .galeria img {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            border-radius: 10px;
+            transition: transform 0.5s, box-shadow 0.5s;
+        }
+
+        /* Zoom en imágenes */
+        .galeria img:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 15px red;
+        }
+
+        /* Rotación en imágenes */
+        .rotate {
+            animation: girar 5s linear infinite;
+        }
+
+
+        /* Efecto de aparición */
+        .fade-in {
+            opacity: 0;
+            animation: aparecer 3s forwards;
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Botón con efecto pulsante */
+        .boton {
+            display: inline-block;
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 0 10px pink;
+            animation: latido 1s infinite;
+        }
+
+        @keyframes latido {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Corazones flotantes */
+        @keyframes corazones {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+
+        .corazon {
+            position: absolute;
+            color: red;
+            font-size: 2em;
+            animation: corazones 5s linear infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Para mi amor, Sara ❤️</h1>
+    <p id="mensaje" class="fade-in">Eres lo mejor que me ha pasado, te amo con todo mi corazón. 💕</p>
+
+    <div class="galeria">
+        <img src="foto1.jpg" class="rotate" alt="Foto 1">
+        <img src="foto2.jpg" alt="Foto 2">
+        <img src="foto3.jpg" alt="Foto 3">
+        <img src="foto4.jpg" alt="Foto 4">
+        <img src="foto5.jpg" alt="Foto 5">
+        <img src="foto6.jpg" alt="Foto 6">
+        <img src="foto7.jpg" alt="Foto 7">
+        <img src="foto8.jpg" alt="Foto 8">
+        <img src="foto9.jpg" alt="Foto 9">
+        <img src="foto10.jpg" alt="Foto 10">
+        <img src="foto11.jpg" alt="Foto 11">
+        <img src="foto12.jpg" alt="Foto 12">
+        <img src="foto13.jpg" alt="Foto 13">
+        <img src="foto14.jpg" alt="Foto 14">
+        <img src="foto15.jpg" alt="Foto 15">
+    </div>
+
+    <br>
+    <a href="#" class="boton">¡Te amo! ❤️</a>
+
+    <!-- Corazones flotantes -->
+    <script>
+        function crearCorazon() {
+            let corazon = document.createElement("div");
+            corazon.classList.add("corazon");
+            corazon.innerHTML = "❤️";
+            corazon.style.left = Math.random() * 100 + "vw";
+            corazon.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.body.appendChild(corazon);
+
+            setTimeout(() => {
+                corazon.remove();
+            }, 5000);
+        }
+
+        setInterval(crearCorazon, 500);
+    </script>
+
+</body>
+</html>
